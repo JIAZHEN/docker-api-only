@@ -1,5 +1,8 @@
+version: '3'
 volumes:
-  postgres_data: {}
+  postgres_data:
+    external: false
+
 services:
   app:
     build:
@@ -7,10 +10,14 @@ services:
       dockerfile: ./docker/app/Dockerfile
     depends_on:
       - db
+    env_file:
+      .env
   db:
     image: postgres
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    env_file:
+      .env
   web:
     build:
       context: .
