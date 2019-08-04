@@ -40,3 +40,12 @@ This is a sample of using docker with Rails
     ```
     docker-compose up -d
     ```
+
+6. If get permission denied when run init-letsencrypt.sh, remove the certbot container and the volume
+
+    ```
+    ./init-letsencrypt.sh
+    sudo ./init-letsencrypt.sh
+    docker rm docker-api-only_certbot_1
+    docker volume rm xxx
+    ```
