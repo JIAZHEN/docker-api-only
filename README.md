@@ -40,5 +40,3 @@ This is a sample of using docker with Rails
     ```
     docker-compose up -d
     ```
-
-6.
