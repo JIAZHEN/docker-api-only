@@ -27,4 +27,4 @@ COPY . .
 # We don't need assets for API app
 
 # Start the main process.
-CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
+CMD ["bundle", "exec", "puma", "-C", "config/puma.rb", "-p", "80"]
